@@ -14,9 +14,19 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "@fortawesome/vue-fontawesome": "^0.1.5",
     "axios": "^0.18.0",
+    "i": "^0.3.6",
+    "node-sass": "^4.11.0",
+    "npm": "^6.6.0",
+    "sass-loader": "^7.1.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.2"
+    "vue-flag-icon": "^1.0.6",
+    "vue-i18n": "^8.7.0",
+    "vue-router": "^3.0.2",
+    "vuelidate": "^0.7.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
