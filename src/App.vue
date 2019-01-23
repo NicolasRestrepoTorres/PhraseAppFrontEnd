@@ -38,7 +38,7 @@
     },
     methods: {
       changeLocale(locale) {
-        axios.post('http://localhost:3000/setLocale', {
+        axios.post('http://192.168.99.100:3000/setLocale', {
           locale: locale.toString(),
           headers: {
             'Accept': 'application/json',

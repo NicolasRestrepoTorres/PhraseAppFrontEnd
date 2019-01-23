@@ -38,7 +38,6 @@
             v-bind:maxlength="$v.form['content'].$params.maxLength.max"
             @blur="onFieldBlur('content')">
         </textarea>
-          <small class="text-muted form-text">{{ $tc('form.charactersLeft', getCharactersLeft('content'), { charCount: getCharactersLeft('content') }) }}</small>
           <div v-if="isErrorField('content')" class="invalid-feedback">{{ $t('error.fieldMaxLength', { field: $t('form.content') }) }}</div>
         </div>
         <div class="alert alert-danger" v-if="isError">
@@ -123,7 +122,7 @@
       sendFormData() {
         this.enableSubmitLoader();
         console.log("jejeje");
-        axios.post('http://localhost:3000/articles', this.form).then(response => {
+        axios.post('http://192.168.99.100:3000/articles', this.form).then(response => {
           this.submitSuccess(response);
           this.disableSubmitLoader();
         }).catch(error => {

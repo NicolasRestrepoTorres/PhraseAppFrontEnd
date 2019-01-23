@@ -3,7 +3,7 @@
   <div id="update_articles">
 
     <div>
-      <h1>{{$t('creation.title')}}</h1>
+      <h1>{{$t('update.title')}} {{form.title}}</h1>
       <form v-if="!isSubmitted" @submit.prevent="submit" novalidate>
         <div class="form-group">
           <label for="title">{{ $t('form.title') }} *</label>
@@ -38,8 +38,7 @@
             v-bind:maxlength="$v.form['content'].$params.maxLength.max"
             @blur="onFieldBlur('content')">
         </textarea>
-          <small class="text-muted form-text">{{ $tc('form.charactersLeft', getCharactersLeft('content'), { charCount: getCharactersLeft('content') }) }}</small>
-          <div v-if="isErrorField('content')" class="invalid-feedback">{{ $t('error.fieldMaxLength', { field: $t('form.content') }) }}</div>
+         <div v-if="isErrorField('content')" class="invalid-feedback">{{ $t('error.fieldMaxLength', { field: $t('form.content') }) }}</div>
         </div>
         <div class="alert alert-danger" v-if="isError">
           <p class="mb-0">
@@ -55,9 +54,9 @@
         <div class="form-group">
           <button type="submit" class="btn btn-primary" :disabled="submitting">
             <span v-if="submitting">{{ $t('form.submitting' ) }} <img src="@/assets/loader.svg" /></span>
-            <span v-else>{{ $t('form.submit' ) }}</span>
+            <span v-else>{{ $t('update.submit' ) }}</span>
           </button>
-          <router-link :to="'/'" class="btn btn-primary"> Back </router-link>
+          <router-link :to="'/'" class="btn btn-primary"> {{$t('back')}} </router-link>
         </div>
       </form>
       <div v-else>
@@ -107,12 +106,8 @@
       }
     },
     created(){
-      console.log("Fetched!");
-      axios.get('http://localhost:3000/articles/' + this.$route.params.id.toString())
-      //{
-      //params: {
-      //   ID: 12345
-      //  })
+
+      axios.get('http://192.168.99.100:3000/articles/' + this.$route.params.id.toString())
         .then(response => {
           this.form.title = response.data.title;
           this.form.topic = response.data.topic;
@@ -146,7 +141,7 @@
       sendFormData() {
         this.enableSubmitLoader();
         console.log("jejeje");
-        axios.put('http://localhost:3000/articles/' + this.$route.params.id.toString() , this.form).then(response => {
+        axios.put('http://192.168.99.100:3000/articles/' + this.$route.params.id.toString() , this.form).then(response => {
           this.submitSuccess(response);
           this.disableSubmitLoader();
         }).catch(error => {

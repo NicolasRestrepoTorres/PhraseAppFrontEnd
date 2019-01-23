@@ -19,7 +19,7 @@
           </blockquote>
         </div>
       </div><br><br>
-      <h2>Questions</h2>
+      <h2>{{$t('questions')}}</h2>
       <br><br>
         <div v-for="(question) in questions" v-bind:key="question.id">
           <div class="card">
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      <router-link :to="'/'" class="btn btn-primary"> Back </router-link>
+      <router-link :to="'/'" class="btn btn-primary"> {{$t('back')}} </router-link>
     </div>
 
 
@@ -81,7 +81,7 @@
 
     created(){
       console.log("Fetched!");
-      axios.get('http://localhost:3000/articles/' + this.$route.params.id.toString())
+      axios.get('http://192.168.99.100:3000/articles/' + this.$route.params.id.toString())
       //{
       //params: {
       //   ID: 12345

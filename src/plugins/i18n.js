@@ -6,6 +6,9 @@ const messages = {
   'en': {
     en: "English",
     de: "German",
+    create_article: "Create an article",
+    questions: "Questions",
+    back: "Back to the main menu",
     form: {
       title: "Title",
       topic: "Topic",
@@ -23,16 +26,28 @@ const messages = {
       sentInfo: "Information sent",
       return: "Back to the main page"
     },
+    error: {
+      fieldRequired: "Field required",
+      fieldMaxLength: "Max length",
+      invalidFields: "Invalid fields:",
+    },
     creation:{
       title: "Create your own article for PhraseApp"
     },
-    welcomeMsg: 'An automatic knowledge base in two languages',
+    update:{
+      title: "Updating the article: ",
+      submit: "Edit this article!"
+    },
+    welcomeMsg: 'A knowledge base in two languages',
     action: "Action"
 
   },
   'de': {
     en: "Englisch",
     de: "Deutsch",
+    create_article: "Erschaff ein Artikel",
+    questions: "Fragen",
+    back: "Zurück",
     form: {
       title: "Titel",
       topic: "Thema",
@@ -47,11 +62,20 @@ const messages = {
         de: "Deutsch"
       }
     },
+    error: {
+      fieldRequired: "Erforderliches Feld",
+      fieldMaxLength: "Maximale Lánge",
+      invalidFields: "Ungültige Felder:",
+    },
     creation:{
       title: "Erschaff dein eigener Artikel bei PhraseApp"
     },
+    update:{
+      title: "Bearbeite den Artikel unter der Name: ",
+      submit: "Bearbeiten!"
+    },
     welcomeMsg: 'Eine automatische Wissensdatenbank in zwei Sprachen',
-    action: "AKTION?"
+    action: "Taten"
 
   }
 };

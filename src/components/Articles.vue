@@ -61,7 +61,7 @@
                 </td>
                 <td>
 
-                  {{ $t(article.language) }}
+                  {{ $t(article.original_language) }}
 
                 </td>
                 <td>
@@ -103,8 +103,8 @@
         </div>
       </div>
     </div>
-
-    <router-link to="/create" class="btn btn-primary btn-lg"> Create new </router-link>
+    <br>
+    <router-link to="/create" class="btn btn-primary btn-lg"> {{$t('create_article')}} </router-link>
 
   </div>
 </template>
@@ -120,7 +120,7 @@
 
   import CreateArticles from '@/components/CreateArticles.vue';
   import UpdateArticles from '@/components/UpdateArticles.vue';
-  import DeleteArticles from '@/components/DeleteArticles.vue';
+
   import ArticlePage from '@/components/ArticlePage.vue';
 
 
@@ -130,7 +130,6 @@
       components: {
         CreateArticles,
         UpdateArticles,
-        DeleteArticles,
         ArticlePage
       },
     data(){
@@ -158,7 +157,7 @@
     created(){
         console.log("Created!");
         console.log (Vue.config.API_URL + '/articles')
-      axios.get('http://localhost:3000/articles')
+      axios.get('http://192.168.99.100:3000/articles')
       //{
       //params: {
       //   ID: 12345
@@ -198,13 +197,13 @@
       onDelete: function (id){
 
         console.log("Removed as that person");
-        axios.delete('http://localhost:3000/articles/' + id.toString())
+        axios.delete('http://192.168.99.100:3000/articles/' + id.toString())
           .then(response => {
             console.log("Deleted!")
           });
         console.log(this.result);
 
-        axios.get('http://localhost:3000/articles')
+        axios.get('http://192.168.99.100:3000/articles')
         //{
         //params: {
         //   ID: 12345
